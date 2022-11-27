@@ -4,21 +4,20 @@ header {
 }
 
 .first_line {
-    @include flex();
+    @include flex($justify-content:flex-start);
 }
 
 .second_line {
     @include flex($justify-content: space-between);
 
     .inputsearch {
-        width: 100%;
-        @include flex();
         position: relative;
-
+        width: 100%;
+        @include flex($justify-content:flex-start);
         svg {
             position: absolute;
             z-index: 99;
-            left: 35px;
+            left: 10px;
             height: 20px;
             width: 20px;
         }
@@ -28,14 +27,14 @@ header {
             border: 1px solid rgba(216, 211, 211, 0.247);
             width: 90%;
             height: 40px;
-            padding: 0 40px;
+            padding-left: 40px;
         }
     }
-
+.drop-language{
+    position: relative;
     .language {
         @include flex();
         cursor: pointer;
-
         span {
             @include flex();
             font-size: 18px;
@@ -45,11 +44,38 @@ header {
 
         .arrow_icon {
             @include flex();
-
+        }
+    }
+    .drop{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40px;
+        z-index: 999;   
+        display: none;
+       .drop-list{
+            width:100px;
+            li{
+                @include flex();
+                background-color: #f9f9f9;
+                border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+                transition: .4s;
+                &:hover{
+                    background-color: #ddd;
+                }
+                a{
+                    padding: 10px 0;
+                    font-size: 16px;
+                    color: #111;
+                }
+            }
+           
+           
         }
     }
 }
-
+}
 .third_line {
     @include flex($justify-content: flex-end);
     height: 100%;
@@ -66,4 +92,10 @@ header {
             background-color: #ED008C;
         }
     }
+}
+
+@media only screen and (max-width:992px) {
+header{
+    display: none;
+}
 }

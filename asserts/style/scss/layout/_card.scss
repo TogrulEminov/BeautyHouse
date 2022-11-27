@@ -38,6 +38,7 @@ background: $background-card;
     position: relative;
 }
 .card_arrow_right{
+    display: none;
     position: absolute;
     z-index:100;
     right: -30px;
@@ -101,7 +102,7 @@ background: $background-card;
         height: 50%;
         
         .card_body_title{
-            @include flexdirection;
+            @include flexdirection($align-items:flex-start);
             gap: 10px;
             padding:20px 10px;
             p{

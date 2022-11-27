@@ -47,6 +47,9 @@ footer {
                 line-height: 20px;
                 color: #FFFFFF;
                 opacity: 0.8;
+                svg{
+                    width: 100%;
+                }
             }
         }
     }
@@ -82,4 +85,28 @@ footer {
             }
         }
     }
+}
+
+
+@media (max-width:992px){
+    .footer_row{
+      @include flexdirection();
+    
+    .footer-content{
+        align-items: center;
+        ul{
+           @include flexdirection($align-items:center)
+        }
+    }
+}
+#footer_end {
+    .footer_second{
+    .footer_end_left{
+        @include flex($align-items:center);
+}
+ .footer_end_right{
+    @include flex($justify-content:center);
+ }
+}
+}
 }

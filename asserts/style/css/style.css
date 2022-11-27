@@ -93,39 +93,51 @@
   }
   .col-lg-1 {
     width: 8.3333333333%;
+    padding: 0 16px;
   }
   .col-lg-2 {
     width: 16.6666666667%;
+    padding: 0 16px;
   }
   .col-lg-3 {
     width: 25%;
+    padding: 0 16px;
   }
   .col-lg-4 {
     width: 33.3333333333%;
+    padding: 0 16px;
   }
   .col-lg-5 {
     width: 41.6666666667%;
+    padding: 0 16px;
   }
   .col-lg-6 {
     width: 50%;
+    padding: 0 16px;
   }
   .col-lg-7 {
     width: 58.3333333333%;
+    padding: 0 16px;
   }
   .col-lg-8 {
     width: 66.6666666667%;
+    padding: 0 16px;
   }
   .col-lg-9 {
     width: 75%;
+    padding: 0 16px;
   }
   .col-lg-10 {
     width: 83.3333333333%;
+    padding: 0 16px;
   }
   .col-lg-11 {
     width: 91.6666666667%;
+    padding: 0 16px;
   }
   .col-lg-12 {
     width: 100%;
+    padding: 0 16px;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -137,8 +149,10 @@
   }
   .col-md-2 {
     width: 16.6666666667%;
+    padding: 0 16px;
   }
   .col-md-3 {
+    padding: 0 16px;
     width: 25%;
   }
   .col-md-4 {
@@ -149,6 +163,7 @@
   }
   .col-md-6 {
     width: 50%;
+    padding: 0 16px;
   }
   .col-md-7 {
     width: 58.3333333333%;
@@ -167,6 +182,7 @@
   }
   .col-md-12 {
     width: 100%;
+    padding: 0 16px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -181,6 +197,7 @@
   }
   .col-s-3 {
     width: 25%;
+    padding: 0 16px;
   }
   .col-s-4 {
     width: 33.3333333333%;
@@ -190,6 +207,7 @@
   }
   .col-s-6 {
     width: 50%;
+    padding: 0 16px;
   }
   .col-s-7 {
     width: 58.3333333333%;
@@ -208,6 +226,7 @@
   }
   .col-s-12 {
     width: 100%;
+    padding: 0 16px;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -222,6 +241,7 @@
   }
   .col-xs-3 {
     width: 25%;
+    padding: 0 16px;
   }
   .col-xs-4 {
     width: 33.3333333333%;
@@ -231,6 +251,7 @@
   }
   .col-xs-6 {
     width: 50%;
+    padding: 0 16px;
   }
   .col-xs-7 {
     width: 58.3333333333%;
@@ -249,6 +270,7 @@
   }
   .col-xs-12 {
     width: 100%;
+    padding: 0 16px;
   }
 }
 * {
@@ -280,7 +302,7 @@ header {
 .first_line {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .second_line {
@@ -289,16 +311,16 @@ header {
   justify-content: space-between;
 }
 .second_line .inputsearch {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-content: flex-start;
 }
 .second_line .inputsearch svg {
   position: absolute;
   z-index: 99;
-  left: 35px;
+  left: 10px;
   height: 20px;
   width: 20px;
 }
@@ -307,15 +329,18 @@ header {
   border: 1px solid rgba(216, 211, 211, 0.247);
   width: 90%;
   height: 40px;
-  padding: 0 40px;
+  padding-left: 40px;
 }
-.second_line .language {
+.second_line .drop-language {
+  position: relative;
+}
+.second_line .drop-language .language {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-.second_line .language span {
+.second_line .drop-language .language span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,10 +348,38 @@ header {
   padding: 0 10px;
   font-weight: 400;
 }
-.second_line .language .arrow_icon {
+.second_line .drop-language .language .arrow_icon {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.second_line .drop-language .drop {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  z-index: 999;
+  display: none;
+}
+.second_line .drop-language .drop .drop-list {
+  width: 100px;
+}
+.second_line .drop-language .drop .drop-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  transition: 0.4s;
+}
+.second_line .drop-language .drop .drop-list li:hover {
+  background-color: #ddd;
+}
+.second_line .drop-language .drop .drop-list li a {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #111;
 }
 
 .third_line {
@@ -349,6 +402,11 @@ header {
   background-color: #ED008C;
 }
 
+@media only screen and (max-width: 992px) {
+  header {
+    display: none;
+  }
+}
 nav {
   background-color: #111;
 }
@@ -362,8 +420,7 @@ nav {
 .navbar_header .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
 }
 .navbar_header .navbar li {
   margin-right: 20px;
@@ -378,6 +435,11 @@ nav {
   color: red;
 }
 
+@media only screen and (max-width: 992px) {
+  nav {
+    display: none;
+  }
+}
 footer {
   background: #131313;
 }
@@ -441,6 +503,9 @@ footer #footer_head {
   color: #FFFFFF;
   opacity: 0.8;
 }
+.footer_row .footer-content .footer_contact a svg {
+  width: 100%;
+}
 
 #footer_end .horizontal {
   height: 1px;
@@ -478,14 +543,45 @@ footer #footer_head {
   opacity: 0.8;
 }
 
+@media (max-width: 992px) {
+  .footer_row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer_row .footer-content {
+    align-items: center;
+  }
+  .footer_row .footer-content ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #footer_end .footer_second .footer_end_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #footer_end .footer_second .footer_end_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .hero-section {
   padding: 10px 0;
 }
 
 #hero_wrapper {
   position: relative;
+  width: 100%;
 }
 #hero_wrapper .hero button {
+  display: none;
   cursor: pointer;
   width: 48px;
   height: 48px;
@@ -498,12 +594,12 @@ footer #footer_head {
 #hero_wrapper .hero button:first-child {
   position: absolute;
   top: 50%;
-  left: -25px;
+  left: -2%;
 }
 #hero_wrapper .hero button:last-child {
   position: absolute;
   top: 50%;
-  right: -25px;
+  right: -2%;
 }
 #hero_wrapper .hero_frame img {
   width: 100%;
@@ -568,6 +664,7 @@ footer #footer_head {
   position: relative;
 }
 #card_header .card_arrow_right {
+  display: none;
   position: absolute;
   z-index: 100;
   right: -30px;
@@ -648,7 +745,7 @@ footer #footer_head {
 #card_header .card .card_body .card_body_title {
   display: flex;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
@@ -734,6 +831,10 @@ footer #footer_head {
 #section-4 {
   background: #FAF9F9;
   padding: 40px 0;
+}
+
+.sec-4-card img {
+  width: 100%;
 }
 
 #sponsor {
@@ -825,7 +926,8 @@ footer #footer_head {
   outline: none;
 }
 #main_end .main_end_row .main_end_contact button {
-  padding: 14px 35px;
+  width: 128px;
+  height: 48px;
   font-size: 14px;
   line-height: 20px;
   color: #FFFFFF;
