@@ -1,0 +1,51 @@
+#main_end {
+    height: 180px;
+    background: $background-end;
+    @include flex();
+
+    .main_end_row {
+        @include flexdirection();
+
+        .main_end_content {
+            @include flex();
+
+            p {
+                font-size: 16px;
+                line-height: 20px;
+                color: #1D2123;
+            }
+        }
+
+        .main_end_contact {
+            @include flex();
+            column-gap: 5px;
+
+            input {
+                width: 70%;
+                padding: 14px 16px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #828282;
+                border: 1px solid #82828236;
+                outline: none;
+            }
+
+            button {
+                padding: 14px 35px;
+                font-size: 14px;
+                line-height: 20px;
+                color: #FFFFFF;
+                background: $background-contact;
+                border-radius: 8px;
+                border: 0;
+                outline: none;
+                transition: .4s;
+                cursor: pointer;
+                &:hover{
+                    background:rgb(92, 205, 92);
+                }
+            }
+        }
+    }
+}

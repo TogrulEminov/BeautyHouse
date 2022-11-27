@@ -1,0 +1,85 @@
+footer {
+    background: #131313;
+
+    #footer_head {
+        padding: 40px 0;
+    }
+    
+}
+
+.footer_row {
+    @include flex($align-items: flex-start);
+
+    .footer-content {
+        @include flexdirection($align-items: flex-start);
+        h3 {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+        ul {
+            @include flexdirection($align-items: flex-start);
+            gap: 10px;
+            li {
+                a {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #FFFFFF;
+                    opacity: 0.8;
+                    transition: .4s;
+                }
+               &:hover {
+                text-decoration: underline;
+               } 
+            }
+        }
+        .footer_contact{
+            @include flexdirection($align-items: flex-start);
+            gap: 20px;
+            li{
+                display: flex;
+                align-items: center;
+                column-gap: 45px;
+            }
+            a{
+                font-size: 14px;
+                line-height: 20px;
+                color: #FFFFFF;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+#footer_end{
+    .horizontal{
+        height: 1px;
+        background: #FFFFFF;
+        opacity: 0.1;
+    }
+    .footer_second{
+        padding: 20px 0;
+        .footer_end_left{
+            @include flex($justify-content:flex-start);
+            span{
+                font-size: 16px;
+                line-height: 20px;
+                color: #FFFFFF;
+                opacity: 0.8;
+            }
+            span:nth-child(2){
+                padding-left: 10px;
+            }
+        }
+        .footer_end_right{
+            @include flex($justify-content:flex-end);
+            column-gap: 40px;
+            a{
+                font-size: 14px;
+                line-height: 20px;
+                color: #FFFFFF;
+                opacity: 0.8;
+            }
+        }
+    }
+}

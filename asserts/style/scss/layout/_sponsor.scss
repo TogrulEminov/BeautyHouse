@@ -26,5 +26,24 @@
     background: $header-bg-color;
 
 }
+
     }
+    .sponsor_paggination{
+        padding: 20px 0;
+        @include flex();
+                button{
+                    cursor: pointer;
+                    border: 1px solid #fff;
+                    margin-right: 10px;
+                    width: 10px;
+                    height: 10px;
+                    background: #E0E0E0;
+                    border-radius: 50%;
+                }
+                .active{
+                    background-color: #111;
+                }
+            }
+            
+
 }
