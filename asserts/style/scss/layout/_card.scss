@@ -1,0 +1,143 @@
+
+#card_header{
+background: $background-card;
+
+    padding: 20px 0;
+.card_header_title{
+    padding: 20px 0;
+   @include flex($justify-content:space-between);
+
+   .card_header_title_left{
+    span{
+        font-size: 20px;line-height: 24px;
+        color: $color-card_title;
+        font-weight: 400;
+    }
+   }
+   .card_header_title_right{
+    @include flex();
+    span{
+        font-size: 14px;font-weight: 400;
+        line-height: 20px;
+        color: $color-card_title;
+    }
+    svg{
+        width: 14px;
+        height: 14px;
+    }
+   }
+}
+.card_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+.all_card{
+    position: relative;
+}
+.card_arrow_right{
+    position: absolute;
+    z-index:100;
+    right: -30px;
+    top: 55%;
+    button{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+}
+.card_row::-webkit-scrollbar{
+    display: none;
+}
+.card{   
+    position: relative;
+    border-radius: 4px;
+    margin:40px 0;
+    width: 250px;
+    background: $background-color;
+    .card_addition{
+        position: absolute;
+        width: 100%;
+        z-index: 99;
+        padding:8px;
+        @include flex($justify-content:space-between,$align-items:flex-start);
+        
+        .card_addition_left{
+            @include flexdirection();
+            gap: 10px;
+        }
+        .card_addition_right{
+            @include flexdirection();
+            gap: 10px;
+            .heart{
+                button{
+                    cursor: pointer;
+                    width: 40px;
+                    height:40px;
+                    border-radius: 50%;
+                    @include flex();
+                    border: 1px solid #F2F2F2;
+                    svg{
+                       color:#828282;
+                    }
+                }
+            }
+        }
+    }
+    .card_header_image{
+        @include flex();
+        img{
+            user-select: none;
+            height: 297px;
+            width: 60%;
+        }
+    }
+    .card_body{
+        height: 50%;
+        
+        .card_body_title{
+            @include flexdirection;
+            gap: 10px;
+            padding:20px 10px;
+            p{
+                line-height: 20px;
+                height: 50px;
+                span{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color:#111;
+                }
+            }
+            .card_body_sec2{
+                span{
+                    color: $color;
+                    padding-left: 4px;
+                }
+            }
+            .card_price{
+                del{
+                    font-size: 20px;
+                    color: #828282;
+                    margin-right: 15px;
+                    span{
+                        font-size: 20px;
+                    color: #828282; 
+                    }
+                }
+                span{
+                    font-size: 20px;
+                    color: $primary-pink;
+                }
+                span:last-child{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+}

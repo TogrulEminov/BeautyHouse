@@ -1,0 +1,61 @@
+.hero-section {
+    padding: 10px 0;
+}
+
+#hero_wrapper {
+    position: relative;
+
+    .hero {
+        button {
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            background-color: $button_bg_color;
+            box-shadow: 0px 4px 8px rgba(29, 33, 35, 0.08);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            border-radius: 50%;
+            border: 0;
+        }
+
+        button:first-child {
+            position: absolute;
+            top: 50%;
+            left: -25px;
+        }
+
+        button:last-child {
+            position: absolute;
+            top: 50%;
+            right: -25px;
+        }
+    }
+
+    .hero_frame {
+        img {
+            width: 100%;
+            height: 500px;
+        }
+
+        .hero_paggination {
+            padding: 6px 0;
+            text-align: center;
+
+            button {
+                margin: 0 4px;
+                width: 8px;
+                height: 8px;
+                background: grey;
+                border: 0;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &.active {
+                    background-color: black;
+                }
+            }
+
+
+
+        }
+    }
+}

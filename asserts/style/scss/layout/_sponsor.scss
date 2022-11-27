@@ -1,0 +1,30 @@
+#sponsor{
+    background: $background-card;
+    padding: 30px 0;
+    .section4_overflow{
+        overflow: scroll;
+        &.section4_overflow::-webkit-scrollbar{
+            display: none;
+
+            .sponsor_corusel{
+                @include flex();
+
+                button{
+
+                }
+            }
+        }      
+.section4_row{
+    display: flex;
+    align-items: center;
+}
+.sponsor_cards{
+    @include flex();
+    width: 150px;
+    height: 80px;
+    border-radius: 8px;
+    background: $header-bg-color;
+
+}
+    }
+}

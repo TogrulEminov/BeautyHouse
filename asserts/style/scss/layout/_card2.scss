@@ -1,0 +1,29 @@
+.card_addition-2{
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    padding:8px;
+    @include flex($justify-content:flex-end,$align-items:flex-start);
+    
+    .card_addition_left{
+        @include flexdirection();
+        gap: 10px;
+    }
+    .card_addition_right{
+        @include flexdirection();
+        gap: 10px;
+        .heart{
+            button{
+                cursor: pointer;
+                width: 40px;
+                height:40px;
+                border-radius: 50%;
+                @include flex();
+                border: 1px solid #F2F2F2;
+                svg{
+                   color:#828282;
+                }
+            }
+        }
+    }
+}

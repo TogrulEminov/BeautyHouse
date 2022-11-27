@@ -1,0 +1,29 @@
+nav {
+    background-color: #111;
+}
+
+.navbar_header {
+    height: 50px;
+    @include flex();
+
+    .navbar {
+        @include flex();
+        width: 100%;
+
+        li {
+            margin-right: 20px;
+
+            a {
+                font-size: 16px;
+                color: #fff;
+                text-transform: uppercase;
+                transition: .4s;
+            }
+
+            &:hover a {
+                color: red;
+            }
+        }
+    }
+
+}
