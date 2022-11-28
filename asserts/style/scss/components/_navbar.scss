@@ -7,7 +7,7 @@ nav {
     @include flex();
 
     .navbar {
-        @include flex($justify-content:flex-start);
+        @include flex($justify-content: flex-start);
 
 
         li {
@@ -28,8 +28,8 @@ nav {
 
 }
 
-@media only screen and (max-width:992px){
-    nav{
+@media only screen and (max-width:992px) {
+    nav {
         display: none;
     }
 }

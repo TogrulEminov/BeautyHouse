@@ -1,10 +1,28 @@
-#section-3{
-    background:$background-card;
+#section-3 {
+    background: $background-card;
     padding: 40px 0;
 
-    .section_3_card{
-        img{
-            width: 100%;
+    .flexdirection {
+        .section_3_card {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    #section-3 {
+        padding: 40px 0;
+
+        .flexdirection {
+            @include flexdirection();
+
+            .section_3_card {
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 }

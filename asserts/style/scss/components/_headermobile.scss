@@ -1,0 +1,94 @@
+#mobile-header {
+    display: none;
+
+    .section-mobile-1 {
+        background-color: #111;
+        padding: 20px 0;
+
+        .mobile_row {
+            @include flex($justify-content: space-between);
+
+            .menu_logo {
+                @include flex($justify-content: space-between);
+
+                .menu {
+                    cursor: pointer;
+                }
+            }
+
+            .user-heart {
+                ul {
+                    @include flex();
+                    column-gap: 30px;
+                }
+            }
+        }
+
+        .input-mobile {
+            padding: 20px 0;
+            @include flex();
+            position: relative;
+            width: 100%;
+
+            svg {
+                position: absolute;
+                z-index: 999;
+                left: 20px;
+            }
+
+            input {
+                outline: none;
+                width: 100%;
+                background-color: #F6F6F8;
+                border: 1px solid gray;
+                padding: 20px 0 20px 50px;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .section-mobile-2 {
+        padding: 20px 0;
+        background-color: #F6F6F8;
+
+        .mobile-overflow {
+            overflow: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .sect-mobile-2-row {
+                @include flex($justify-content: space-between);
+
+                .card-mobile {
+                    @include flexdirection($justify-content: flex-start, $align-items: flex-start);
+                    gap: 20px;
+                    width: 150px;
+
+                    div {
+                        @include flex();
+                        width: 64px;
+                        height: 64px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        line-height: 16px;
+                        text-align: center;
+                        color: #4F4F4F;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    #mobile-header {
+        display: block;
+        padding: 0;
+    }
+}

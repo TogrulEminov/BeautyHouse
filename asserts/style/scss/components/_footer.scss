@@ -2,9 +2,8 @@ footer {
     background: #131313;
 
     #footer_head {
-        padding: 40px 0;
+        padding: 30px 0;
     }
-    
 }
 
 .footer_row {
@@ -12,15 +11,18 @@ footer {
 
     .footer-content {
         @include flexdirection($align-items: flex-start);
+
         h3 {
             font-weight: 400;
             font-size: 20px;
             line-height: 24px;
             color: #FFFFFF;
         }
+
         ul {
             @include flexdirection($align-items: flex-start);
             gap: 10px;
+
             li {
                 a {
                     font-size: 14px;
@@ -29,84 +31,140 @@ footer {
                     opacity: 0.8;
                     transition: .4s;
                 }
-               &:hover {
-                text-decoration: underline;
-               } 
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
-        .footer_contact{
+
+        .footer_contact {
             @include flexdirection($align-items: flex-start);
             gap: 20px;
-            li{
+
+            li {
                 display: flex;
                 align-items: center;
                 column-gap: 45px;
             }
-            a{
+
+            a {
                 font-size: 14px;
                 line-height: 20px;
                 color: #FFFFFF;
                 opacity: 0.8;
-                svg{
+
+                svg {
                     width: 100%;
                 }
             }
         }
     }
+
+    .footer_anonym {
+        @include flex($justify-content: center);
+        gap: 30px;
+        display: none;
+
+        a {
+            font-size: 14px;
+            line-height: 20px;
+            color: #FFFFFF;
+            opacity: 0.8;
+        }
+    }
 }
-#footer_end{
-    .horizontal{
+
+
+
+#footer_end {
+    .horizontal {
         height: 1px;
         background: #FFFFFF;
         opacity: 0.1;
     }
-    .footer_second{
+
+    .footer_second {
         padding: 20px 0;
-        .footer_end_left{
-            @include flex($justify-content:flex-start);
-            span{
-                font-size: 16px;
-                line-height: 20px;
-                color: #FFFFFF;
-                opacity: 0.8;
+
+        .footer_sec_row {
+            @include flex($align-items: flex-start);
+
+            .footer_end_left {
+                @include flex($justify-content: flex-start);
+
+                span {
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #FFFFFF;
+                    opacity: 0.8;
+                }
+
+                span:nth-child(2) {
+                    padding-left: 10px;
+                }
             }
-            span:nth-child(2){
-                padding-left: 10px;
-            }
-        }
-        .footer_end_right{
-            @include flex($justify-content:flex-end);
-            column-gap: 40px;
-            a{
-                font-size: 14px;
-                line-height: 20px;
-                color: #FFFFFF;
-                opacity: 0.8;
+
+            .footer_end_right {
+                @include flex($justify-content: flex-end);
+                column-gap: 40px;
+
+                a {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #FFFFFF;
+                    opacity: 0.8;
+                }
             }
         }
     }
 }
 
+@media only screen and (max-width:992px) {
+    .footer_row {
+        @include flex($align-items: center);
+        flex-direction: column;
+        gap: 30px;
 
-@media (max-width:992px){
-    .footer_row{
-      @include flexdirection();
-    
-    .footer-content{
-        align-items: center;
-        ul{
-           @include flexdirection($align-items:center)
+        .footer-content {
+            @include flexdirection($align-items: center);
+            gap: 25px;
+
+            ul {
+                @include flexdirection($align-items: center);
+                gap: 8px;
+
+                li {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .footer_contact {
+                @include flexdirection($align-items: center);
+                gap: 20px;
+            }
+        }
+
+        .footer_anonym {
+            display: flex;
         }
     }
-}
+
 #footer_end {
-    .footer_second{
-    .footer_end_left{
-        @include flex($align-items:center);
-}
- .footer_end_right{
-    @include flex($justify-content:center);
- }
-}
+    .footer_second {
+        .footer_sec_row {
+            @include flex($align-items: center);
+            flex-direction: column;
+            .footer_end_left {
+                @include flex($justify-content: center);
+            }
+
+            .footer_end_right {
+                display: none;
+            }
+        }
+    }
 }
 }
